@@ -146,7 +146,7 @@ public class MiniProxy extends Thread {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream(),
               "ISO-8859-1");
             outputStreamWriter.write("HTTP/" + host + " 502 Bad Gateway\r\n");
-            outputStreamWriter.write("Proxy-agent: MiniProxy/0.1\r\n");
+            outputStreamWriter.write("X-Proxy-Agent: MiniProxy/0.1\r\n");
             outputStreamWriter.write("\r\n");
             outputStreamWriter.flush();
         }
@@ -155,7 +155,7 @@ public class MiniProxy extends Thread {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(clientSocket.getOutputStream(),
               "ISO-8859-1");
             outputStreamWriter.write("HTTP/" + host + " 200 Connection established\r\n");
-            outputStreamWriter.write("Proxy-agent: MiniProxy/0.1\r\n");
+            outputStreamWriter.write("X-Proxy-Agent: MiniProxy/0.1\r\n");
             outputStreamWriter.write("\r\n");
             outputStreamWriter.flush();
         }
